@@ -14,7 +14,7 @@ create table users (
   username varchar(200) unique not null,
   phash text unique not null,
   logo text,
-  teamid integer references teams (id)
+  teamid integer references teams (id) -- Check if deleting team id will delete the team itself
 );
 
 create table records (
