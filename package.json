@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js",
+    "reset-db": "dropdb firstngoal; createdb firstngoal; psql -f schema.sql firstngoal; psql -f seed.sql firstngoal;"
   },
   "author": "",
   "license": "ISC",
