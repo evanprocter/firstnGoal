@@ -15,7 +15,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json);
 
 function protectRoute(req, res, next) {
-  if (req.session.user) {
+  const loggedIn = (req.session.user) ? true : false;
+  if (loggedIn) {
     next();
   } else {
     res.redirect('/login');
