@@ -80,3 +80,15 @@ app.post('/edit/:id(\\d+)', (req, res) => {
   const newName = req.body.//property here
   // something here
 });
+
+// Going to a specific blog page
+app.get('/blog/:id(\\d+)', protectRoute, (req, res) => {
+  const id = req.params.id;
+  // something here
+});
+
+// Creating a new blog page
+app.post('/blog/:id(\\d+)', (req, res) => {
+  const id = req.params.id;
+  const blogPost = req.body.//property here
+});
