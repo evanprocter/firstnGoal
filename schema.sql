@@ -46,3 +46,7 @@ create table stats (
   statdate timestamp,
   playerid integer references players (id)
 );
+
+create table posts (
+
+);
