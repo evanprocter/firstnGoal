@@ -24,11 +24,11 @@ const cookies = {
 //         console.log(team);
 //       });
 
-//returns simplified box score data for individual players of a specific team for a specific week
-// espnFF.getSingleTeamPlayers(cookies, '1483123', '1', '10')
-//       .then(players => {
-//         console.log(players);
-//       });
+// returns simplified box score data for individual players of a specific team for a specific week
+espnFF.getSingleTeamPlayers(cookies, '1483123', '1', '10')
+      .then(players => {
+        console.log(players);
+      });
 
 // espnFF.getBoxScore(cookies, importantVariables.league_id, 1, 10)
 //       .then(leagueInfo => {
