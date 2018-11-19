@@ -35,10 +35,10 @@ const Users = require('./models/Users');
 //===========================
 
 // Retrieves all users
-Users.getAllUsers()
-    .then(allUsers => {
-        console.log(allUsers);
-    })
+// Users.getAllUsers()
+//     .then(allUsers => {
+//         console.log(allUsers);
+//     })
 
 // Retrieves user by id
 // Users.getUserById(2)
@@ -90,4 +90,22 @@ Users.getAllUsers()
 //     .then(rowCount => {
 //         console.log(`${rowCount} affected`);
 //     })
+
+
+// ==============================
+//          POSTS DATA
+// ==============================
+// Gets all blogs from a user
+Users.getUserById(2)
+    .then(user => {
+        user.getAllUsersBlogs(user.id)
+            .then( result => {
+                console.log('Here is a list of your recent blogs.');
+                console.log('------------------------------------');
+                result.forEach(format => {
+                    console.log(format);
+                })
+            }
+        )
+    })
     

@@ -127,6 +127,21 @@ class Users {
         })
     }
 
+// ==============================
+//          POSTS DATA
+// ==============================
+
+    getAllUsersBlogs(id) {
+        return db.any('select * from blogs where userid = $1 order by blogtime desc', [id])
+            .then(result => {
+                const arrOfBlogs = result.map( blog => {
+                    return (`Title: ${blog.title} Body: ${blog.body}`);
+                })
+                return arrOfBlogs;
+                })
+    }
 }
+
+
 
 module.exports = Users;

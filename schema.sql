@@ -47,6 +47,17 @@ create table stats (
   playerid integer references players (id)
 );
 
-create table posts (
+create table blogs (
+  id serial primary key,
+  title varchar(100),
+  body text,
+  blogtime timestamp,
+  userid integer references users (id)
+);
 
+create table comments (
+  id serial primary key,
+  comment text,
+  posttime timestamp,
+  userid integer references users(id)
 );
