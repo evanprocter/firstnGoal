@@ -62,27 +62,27 @@ class Users {
     // }
 
     // Retrieve team name
-//     getTeamName() {
-//         // Come back to
-//     }
+    getTeamName() {
+        // Come back to
+    }
 
 
-//     // ==========================
-//             // Update
-//     //===========================
+    // ==========================
+            // Update
+    //===========================
 
-//     // Updates username
-//     updateUsername() {
-//         // Come back to
-//     }
+    // Updates username
+    updateUsername() {
+        // Come back to
+    }
 
-//     // ==========================
-//             // Delete
-//     //===========================
-//     static deleteUser() {
-//         // Come back to
-//     }
+    // ==========================
+            // Delete
+    //===========================
+    static deleteUser() {
+        // Come back to
+    }
 
-// }
+}
 
 module.exports = Users;

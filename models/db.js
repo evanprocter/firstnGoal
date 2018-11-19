@@ -12,6 +12,6 @@ const pgp = require('pg-promise')({
     database: process.env.DB_NAME,
  });
 
- 
+  
  
  module.exports = db;
