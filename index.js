@@ -9,24 +9,22 @@ const Users = require('./models/Users');
 //===========================
   
 // Creates and adds single user database
-Users.addUser('Sam', '678')
-    .then(santa => {
-        // console.log(santa);
-        santa.getPassword()
-            .then(password => {
-                console.log(password.phash);
-            })
+// Users.addUser('Sam', '678')
+//     .then(santa => {
+//         // console.log(santa);
+//         santa.getPassword()
+//             .then(password => {
+//                 console.log(password.phash);
+//             })
 
-    })
+//     })
 
 // ==========================
           // RETRIEVE
 //===========================
 
-// Retrieves all users
+Retrieves all users
 Users.getAllUsers()
     .then(allUsers => {
         console.log(allUsers);
     })
-
-// Retrieve team name
