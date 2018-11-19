@@ -3,7 +3,7 @@ function header() {
   <header>
     <div class="logo-div"></div> <!-- Append logo here if they have one -->
     <div class="information-text">
-      <p>Our App</p>
+      <p>FirstN'Goal</p>
       <p data-league-name></p> <!-- League name here -->
     </div>
     <div class="upcoming-match">
