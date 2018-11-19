@@ -51,3 +51,23 @@ values
     ('Rushing Yards', 113.2, '2018-03-04', 2),
     ('Passing Yards', 250.2, '2018-09-06', 1),
     ('Receiving Yards', 75, '2018-01-01', 3);
+
+  insert into blogs
+    (title, body, blogtime, userid)
+  values
+    ('Football', 'I love football so much. It is so super cool', '2018-11-02', 1),
+    ('Sports', 'I love sport so much. It is so super awesome', '2017-06-02', 2),
+    ('Touchdown', 'I love touchdowns so much. It is so super great', '2018-03-07', 3),
+    ('Fumbles', 'I love fumbles so much. It isso super cool it is awesome', '2018-11-09', 2),
+    ('Interception', 'I love interceptions so much. It is the best', '2018-02-06', 1);
+
+  insert into comments
+    (comment, posttime, userid)
+  values
+    ('They rock', '2018-09-03', 1),
+    ('They suck', '2018-06-02', 2),
+    ('They are awesome', '2018-01-01', 3),
+    ('I do not like the quarterback', '2018-06-08', 2),
+    ('He is a great footbalkl palyer', '2018-02-02', 1);
+
+
