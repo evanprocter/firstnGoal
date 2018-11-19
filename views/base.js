@@ -15,6 +15,7 @@ function createPage(content, loggedIn=false) {
 ${header()}
 ${content}
 ${footer()}
+<script src="scripts/frontend.js"></script>
 </body>
 </html>
   `
