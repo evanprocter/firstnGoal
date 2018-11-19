@@ -1,17 +1,18 @@
-const espnFF = require('espn-ff-api');
-const env = require('dotenv').config(); 
-const importantVariables = require('./config')();
+// const espnFF = require('espn-ff-api');
+// const env = require('dotenv').config(); 
+// const importantVariables = require('./config')();
 
 
-// console.log(config);
-// console.log(im.SWID);
+// // console.log(config);
+// // console.log(im.SWID);
 
-const cookies = {
-    espnS2: importantVariables.espnS2,
-    SWID: importantVariables.SWID,
-};
+// const cookies = {
+//     espnS2: importantVariables.espnS2,
+//     SWID: importantVariables.SWID,
+// };
 
 
+<<<<<<< HEAD
 
 // espnFF.getMatchupLineups(cookies, '1483123', '1', '10')
 //       .then(teams => {
@@ -29,6 +30,12 @@ espnFF.getSingleTeamPlayers(cookies, '1483123', '1', '10')
       .then(players => {
         console.log(players);
       });
+=======
+// espnFF.getBoxScore(cookies, importantVariables.league_id, 1, 10)
+//       .then(leagueInfo => {
+//         console.log(leagueInfo.boxscore.progames);
+//       });
+>>>>>>> f6d2a493852d8d65594dc73c19ddbfc0bbf64d00
 
 // espnFF.getBoxScore(cookies, importantVariables.league_id, 1, 10)
 //       .then(leagueInfo => {
