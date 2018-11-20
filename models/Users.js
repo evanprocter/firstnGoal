@@ -1,4 +1,7 @@
 const db = require('./db');
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+
 
 class Users {
 
@@ -20,6 +23,9 @@ class Users {
     
     // Adds single user to database
     static addUser(username, phash, logo) {
+        const salt = bcrypt.genSaltSync(saltRounds);
+        const hash = bcrypt.hashSync(password, salt);
+
         return db.one(`insert into users 
                             (username, phash, logo) 
                         values ($1, $2, $3) 
@@ -49,7 +55,7 @@ class Users {
     }
 
     // Get User By Password
-    getPassword() {
+    static getPassword() {
         return db.one(`select * from users where phash = $1`, [this.phash])
             .then(password => {
                 return password;
@@ -67,8 +73,8 @@ class Users {
     }
     
     // Retrieves a single user
-    getUserByName() {
-        return db.one(`select * from users where username ilike '%$1:raw%'`, [this.username]);
+    static getUserByName(username) {
+        return db.one(`select * from users where username ilike '%$1:raw%'`, [username]);
     }
 
 
@@ -91,6 +97,12 @@ class Users {
             })
             return playerInfo;
         })
+    }
+
+    // Retrieves and compares passwords
+    static passwordDoesMatch(password) {
+        const didMatch = bcrypt.compareSync(password, this.phash);
+        return didMatch;
     }
         
     

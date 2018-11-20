@@ -13,13 +13,13 @@ const newBlog = require('./views/newBlog');
 const db = require('./models/db');
 const session = require('express-session');
 const pgSession = require('connect-pg-simple')(session);
-// app.use(session({
-//     store: new pgSession({
-//         pgPromise: db
-//     }),
-//     secret: 'demePollosAsadosYArrozBlanco',
-//     saveUninitialized: false
-// }));
+app.use(session({
+    store: new pgSession({
+        pgPromise: db
+    }),
+    secret: 'demePollosAsadosYArrozBlanco',
+    saveUninitialized: false
+}));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -35,19 +35,37 @@ app.use(bodyParser.json());
 
 // Home page
 app.get('/', (req, res) => {
-  res.send(base(home));
+  res.send(base(home()));
 });
 
 // Setting up login page
 app.get('/login', (req, res) => {
 //   // something here
-  res.send(base(login));
+  res.send(base(login()));
 });
 
 // Validating login information from form field
 app.post('/login', (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
+  
+    Users.getUserByName(username)
+        .catch(err => {
+            console.log(err);
+            res.redirect('/login');
+        })
+        .then(theUser => {
+          console.log(theUser);
+
+            // if (theUser.passwordDoesMatch(password)) {
+            //     req.session.user = theUser;
+            //     console.log(req.session.user);
+            //     console.log(' I have to poop');
+            //     // res.redirect(`/profile/${req.session.user.id}`);
+            // } else {
+            //     res.redirect('/login');
+            // }
+        })
   
   res.send(req.body);
   
@@ -70,11 +88,24 @@ app.post('/register', (req, res) => {
   const password = req.body.password;
   //Method call
   Users.addUser(username, password)
+    .catch(() => {
+      res.redirect('/register');
+      })
     .then(newUser => {
-      res.redirect('profile/${newUser.id}');
+      req.session.user = newUser;
+      const idValue = req.session.user.id;
+      console.log(req.session.user);
+      console.log(idValue);
+
+      res.redirect(`/profile/${idValue}`);
     })
-  
   // something here
+});
+
+app.get('/profile', (req, res) => {
+  // const user = req.params.id;
+  // something here
+  res.send(base(profile));
 });
 
 // // Showing user profile, protected

@@ -1,7 +1,7 @@
 function editProfile(id) {
   return `
   <div class="edit-page">
-    <form action='/edit/${id}' method="post">
+    <form action='/edit/${id}' method="POST">
       <label>
         Current Username:
         <input type="text" name="username">

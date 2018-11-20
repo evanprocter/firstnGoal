@@ -1,7 +1,7 @@
 function register() {
   return `
   <div class="register-page">
-    <form action="/register" method="post">
+    <form action="/register" method="POST">
       <label>
         Username:
         <input type="text" name="username" required>
@@ -21,7 +21,7 @@ function register() {
     </form>
     <a href="./login">I already have an account</a>
   </div>
-  `
+  `;
 }
 
 module.exports = register;

@@ -18,7 +18,7 @@ ${footer()}
 <script src="scripts/frontend.js"></script>
 </body>
 </html>
-  `
+  `;
 }
 
 module.exports = createPage;
