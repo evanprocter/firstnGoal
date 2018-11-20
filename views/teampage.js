@@ -1,6 +1,8 @@
 function showRoster() {
   return `
-  <h1>Roster</h1>
+  <div class="Roster"
+  <p>Roster</p>
+  </div>
   <div class="roster-div">
     <table data-roster>
       <tr>

@@ -1,0 +1,121 @@
+body {
+    background: yellowgreen;
+    margin: 25px;
+    font-family: Andale Mono, 'Courier New', Courier, monospace;
+}
+
+h1 {
+    background: red;
+    margin-bottom: 50px;
+    font-family: ;
+}
+
+h3 {
+    background: yellow;
+}
+
+.quotes p {  
+    /* quotes on the home page */
+    background: white;
+    margin-bottom: 0px;
+}
+
+.login-link-div p {
+    /* login and create and account links on home page */
+    background: purple;
+}
+
+.team-name p {
+    /* copyright and company name on home page */
+    background: blue;
+}
+
+.individual-links p {
+    /* targets all builders names on footer */
+    background: darkgoldenrod;
+}
+
+.information-text p {
+    /* targets the firstngoal in the header */
+    background: darkgray;
+}
+
+.upcoming-match p {
+    /* upcoming match on home page */
+    background: lightblue;
+}
+
+.sign-up p {
+    /* sign up link on home page */
+    background: black;
+}
+
+.top-posts-from-league p {
+    /* top posts in the profile page */
+
+}
+
+.team-info p {
+    /* targets 'Your Team' text in the profile page */
+
+}
+
+.rankings p {
+    /* targets 'standings' text in the profile page */
+    background: purple;
+}
+
+
+/* basic skeleton of login form */
+/* --------------------------------------- */
+.login-div input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.login-div input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-div input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.login-div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+/* ------------------------------------------- */
+
+.new-post {
+    /* targets new blog form */
+
+}
+
+.edit-page p {
+    /* targets the edit profile page form */
+
+}
+
+.register-page {
+    /* targets register form */
+
+}
+
+    /* add css for seeBlog page */
+
+
+    /* add css for team page */

@@ -1,4 +1,4 @@
-function profile() {
+function profile(id) {
   return `
   <div class="top-posts-from-league">
     <p>Top Posts:</p>
@@ -24,6 +24,7 @@ function profile() {
   </div>
   <div class="rankings" data-rankings>
     <h3>Current Standings:</h3>
+
     <!-- <p>1. <span>Dream Team</span></p>     -->
   </div>
   <div class="personal-blog">
@@ -35,6 +36,6 @@ function profile() {
     <a href="">Show More</a>
   </div>
   `
-}
+};
 
 module.exports = profile;
