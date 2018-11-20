@@ -1,7 +1,7 @@
 function header() {
   return `
   <header>
-    <div class="logo-div"></div> <!-- Append logo here if they have one -->
+    <div class="logo-div" data-logo></div> <!-- Append logo here if they have one -->
     <div class="information-text">
       <p>FirstN'Goal</p>
       <p data-league-name></p> <!-- League name here -->

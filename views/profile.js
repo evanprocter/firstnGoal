@@ -11,7 +11,7 @@ function profile() {
   <div class="team-info">
     <p>Your team</p>
     <table>
-      <tr>
+      <tr data-roster>
         <th>Pos.</th>
         <th>Player</th>
         <th>Health</th>
@@ -22,7 +22,7 @@ function profile() {
       <!-- Other table rows here -->
     </table>
   </div>
-  <div class="rankings">
+  <div class="rankings" data-rankings>
     <h3>Current Standings:</h3>
     <!-- <p>1. <span>Dream Team</span></p>     -->
   </div>
