@@ -22,19 +22,19 @@ function footer() {
      </div>
      <div class="individual-links">
        <div class="april-link links">
-         <span class="name">April Copes</span>
+        <p><span class="name">April Copes</span>
          <a href="https://github.com/antdevelopment1"><i class="fab fa-github"></i></a>
          <a href="https://www.linkedin.com/in/april-copes"><i class="fab fa-linkedin"></i></a>
        </div>
        <div class="alex-links links">
-         <span class="name">Alex Rogers</span>
+         <p><span class="name">Alex Rogers</span>
          <a href="https://github.com/alexrogers823"><i class="fab fa-github"></i></a>
          <a href="https://www.linkedin.com/in/alexrogers823"><i class="fab fa-linkedin"></i></a>
        </div>
        <div class="evan-links links">
-         <span class="name">Evan Procter</span>
+         <p><span class="name">Evan Procter</span>
          <a href="https://github.com/evanprocter"><i class="fab fa-github"></i></a>
-         <a href="https://www.linkedin.com/in/evan-procter-419342165"><i class="fab fa-linkedin"></i></a>
+         <a href="https://www.linkedin.com/in/evan-procter-419342165"><i class="fab fa-linkedin"></i></a></p>
        </div>
      </div>
   </footer>

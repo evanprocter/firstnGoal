@@ -23,7 +23,7 @@ function profile() {
     </table>
   </div>
   <div class="rankings">
-    <h3>Current Standings:</h3>
+    <p>Current Standings:</p>
     <!-- <p>1. <span>Dream Team</span></p>     -->
   </div>
   <div class="personal-blog">

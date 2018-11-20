@@ -20,7 +20,7 @@ const pgSession = require('connect-pg-simple')(session);
 //     secret: 'demePollosAsadosYArrozBlanco',
 //     saveUninitialized: false
 // }));
-
+app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -35,7 +35,7 @@ app.use(bodyParser.json());
 
 // Home page
 app.get('/', (req, res) => {
-  res.send(base(home));
+  res.send(base(home()));
 });
 
 // Setting up login page
