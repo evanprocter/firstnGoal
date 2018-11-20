@@ -1,5 +1,6 @@
 const {header, footer} = require('./bookends.js');
 
+
 function createPage(content, loggedIn=false) {
   return `
 <!DOCTYPE html>
@@ -10,6 +11,7 @@ function createPage(content, loggedIn=false) {
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Document</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+<link rel= "stylesheet" href="stylesheets/styles.css">
 </head>
 <body>
 ${header()}

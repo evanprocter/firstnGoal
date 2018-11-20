@@ -1,6 +1,8 @@
 function editProfile(id) {
   return `
+<link rel= "stylesheet" href="stylesheets/styles.css">
   <div class="edit-page">
+
     <form action='/edit/${id}' method="POST">
       <label>
         Current Username:
@@ -11,7 +13,7 @@ function editProfile(id) {
         New Username:
         <input type="text" name="new-username">
         <br>
-        <input type="submit" value="Let's Go!">
+        <input type="submit" value="Let's Go!"></p>
       </label>
     </form>
     <a href="./profile">Go Back</a>

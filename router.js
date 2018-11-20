@@ -13,6 +13,7 @@ const newBlog = require('./views/newBlog');
 const db = require('./models/db');
 const session = require('express-session');
 const pgSession = require('connect-pg-simple')(session);
+
 app.use(session({
     store: new pgSession({
         pgPromise: db
@@ -20,6 +21,8 @@ app.use(session({
     secret: 'demePollosAsadosYArrozBlanco',
     saveUninitialized: false
 }));
+
+app.use(express.static('public'));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -110,9 +113,9 @@ app.get('/profile', (req, res) => {
 
 // // Showing user profile, protected
 app.get('/profile/:id(\\d+)', (req, res) => {
-  // const user = req.params.id;
+  const user = req.params.id;
   // something here
-  res.send(base(profile));
+  res.send(base(profile(3)));
 });
 
 // // Editing user information, protected
