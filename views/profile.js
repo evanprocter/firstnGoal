@@ -35,6 +35,6 @@ function profile(id) {
     <a href="">Show More</a>
   </div>
   `
-}
+};
 
 module.exports = profile;

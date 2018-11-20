@@ -2,8 +2,9 @@ function editProfile(id) {
   return `
 <link rel= "stylesheet" href="stylesheets/styles.css">
   <div class="edit-page">
-    <form action='/edit/${id}' method="post">
-     <label>
+
+    <form action='/edit/${id}' method="POST">
+      <label>
         Current Username:
         <input type="text" name="username">
         <br>
