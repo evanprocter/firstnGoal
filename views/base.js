@@ -1,5 +1,6 @@
 const {header, footer} = require('./bookends.js');
 
+
 function createPage(content, loggedIn=false) {
   return `
 <!DOCTYPE html>

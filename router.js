@@ -79,9 +79,9 @@ app.post('/register', (req, res) => {
 
 // // Showing user profile, protected
 app.get('/profile/:id(\\d+)', (req, res) => {
-  // const user = req.params.id;
+  const user = req.params.id;
   // something here
-  res.send(base(profile));
+  res.send(base(profile(3)));
 });
 
 // // Editing user information, protected

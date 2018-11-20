@@ -4,7 +4,7 @@ function editProfile(id) {
   <div class="edit-page">
     <form action='/edit/${id}' method="post">
      <label>
-        <p>Current Username:
+        Current Username:
         <input type="text" name="username">
         <br>
       </label>

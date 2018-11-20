@@ -62,7 +62,7 @@ h3 {
 
 .rankings p {
     /* targets 'standings' text in the profile page */
-
+    background: purple;
 }
 
 
@@ -100,3 +100,22 @@ h3 {
 }
 /* ------------------------------------------- */
 
+.new-post {
+    /* targets new blog form */
+
+}
+
+.edit-page p {
+    /* targets the edit profile page form */
+
+}
+
+.register-page {
+    /* targets register form */
+
+}
+
+    /* add css for seeBlog page */
+
+
+    /* add css for team page */

@@ -1,4 +1,4 @@
-function profile() {
+function profile(id) {
   return `
   <div class="top-posts-from-league">
     <p>Top Posts:</p>
