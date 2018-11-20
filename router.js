@@ -1,94 +1,138 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const app = express();
+const bodyParser = require('body-parser');
+const Users = require('./models/Users');
+const base = require('./views/base');
+const home = require('./views/home');
+const login = require('./views/login');
+const register = require('./views/register');
+const profile = require('./views/profile');
+const edit = require('./views/edit_profile');
+const seeBlog = require('./views/seeBlog');
+const newBlog = require('./views/newBlog');
+const db = require('./models/db');
 const session = require('express-session');
 const pgSession = require('connect-pg-simple')(session);
-app.use(session({
-    store: new pgSession({
-        pgPromise: db
-    }),
-    secret: 'demePollosAsadosYArrozBlanco',
-    saveUninitialized: false
-}));
+// app.use(session({
+//     store: new pgSession({
+//         pgPromise: db
+//     }),
+//     secret: 'demePollosAsadosYArrozBlanco',
+//     saveUninitialized: false
+// }));
 
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json);
+app.use(bodyParser.json());
 
-function protectRoute(req, res, next) {
-  const loggedIn = (req.session.user) ? true : false;
-  if (loggedIn) {
-    next();
-  } else {
-    res.redirect('/login');
-  }
-}
+// function protectRoute(req, res, next) {
+//   const loggedIn = (req.session.user) ? true : false;
+//   if (loggedIn) {
+//     next();
+//   } else {
+//     res.redirect('/login');
+//   }
+// }
 
 // Home page
 app.get('/', (req, res) => {
-  // something here
-  res.send(home);
+  res.send(base(home));
 });
 
 // Setting up login page
 app.get('/login', (req, res) => {
-  // something here
+//   // something here
   res.send(base(login));
 });
 
 // Validating login information from form field
 app.post('/login', (req, res) => {
-  const verify = req.body.//property here
-  // something here
+  const username = req.body.username;
+  const password = req.body.password;
+  
+  res.send(req.body);
+  
 });
 
-app.post('/logout', (req, res) => {
-  req.session.destroy();
-  res.redirect('/');
-})
+// app.post('/logout', (req, res) => {
+//   req.session.destroy();
+//   res.redirect('/');
+// });
 
-// Setting up registration page
+// // Setting up registration page
 app.get('/register', (req, res) => {
   // something here
   res.send(base(register));
 });
 
-// Creating user from form field
+// // Creating user from form field
 app.post('/register', (req, res) => {
-  const newUser = req.body.//property here;
+  const username = req.body.username;
+  const password = req.body.password;
   //Method call
-  res.send(newUser);
+  Users.addUser(username, password)
+    .then(newUser => {
+      res.redirect('profile/${newUser.id}');
+    })
+  
   // something here
 });
 
-// Showing user profile, protected
-app.get('/profile/:id(\\d+)', protectRoute, (req, res) => {
-  const user = req.params.id;
+// // Showing user profile, protected
+app.get('/profile/:id(\\d+)', (req, res) => {
+  // const user = req.params.id;
   // something here
   res.send(base(profile));
 });
 
-// Editing user information, protected
-app.get('/edit/:id(\\d+)', protectRoute, (req, res) => {
+// // Editing user information, protected
+app.get('/edit/:id(\\d+)', (req, res) => {
   const user = req.params.id;
-  // something here
-  res.send(base(edit));
+  const newlyEdit = edit(user);
+  res.send(base(newlyEdit));
 });
 
-// Updating user information, protected
+// // Updating user information, protected
 app.post('/edit/:id(\\d+)', (req, res) => {
   const id = req.params.id;
-  const newName = req.body.//property here
+  console.log(req.body);
+  const username = req.body["new-username"];
+  Users.getUserById(id)
+    .then(result => {
+      // console.log(result);
+      result.updateUsernameById(result.username)
+        .then(result => {
+          console.log(result);
+        })
+    })
+  
+  // res.redirect()
   // something here
 });
 
-// Going to a specific blog page
-app.get('/blog/:id(\\d+)', protectRoute, (req, res) => {
+// // Going to a specific blog page - (add protected)
+app.get('/blog/:id(\\d+)', (req, res) => {
   const id = req.params.id;
+  res.send(base(seeBlog));
   // something here
 });
 
-// Creating a new blog page
-app.post('/blog/:id(\\d+)', (req, res) => {
+app.get('/blog/new/:id(\\d+)', (req, res) => {
   const id = req.params.id;
-  const blogPost = req.body.//property here
+  res.send(base(newBlog(id)));
+});
+
+// // Creating a new blog page
+app.post('/blog/new/:id(\\d+)', (req, res) => {
+  const id = req.params.id;
+  const blogTitle = req.body.blogTitle;
+  const blogBody = req.body.blogBody;
+  Users.newBlog(blogTitle, blogBody, id)
+    .then(result => {
+      console.log(`Updated and the id of your post is ${result.id}`);
+    })
+
+});
+
+app.listen(3000, () => {
+  console.log('Your express app is ready');
 });
