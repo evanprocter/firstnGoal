@@ -1,17 +1,11 @@
 require('dotenv').config();
 const Users = require('./models/Users');
+require('./router');
+
 // const espnFF = require('espn-ff-api');
 // const importantVariables = require('./config')();
 
 
-
-// console.log(config);
-// console.log(im.SWID);
-
-// const cookies = {
-//     espnS2: importantVariables.espnS2,
-//     SWID: importantVariables.SWID,
-// };
 
 
 
@@ -95,17 +89,25 @@ const Users = require('./models/Users');
 // ==============================
 //          POSTS DATA
 // ==============================
+// Create new post
+
+// Users.newBlog('blogtitle', 'blogbody', 6)
+//     .then(result => {
+//         console.log(result);
+    // })
+
+
 // Gets all blogs from a user
-Users.getUserById(2)
-    .then(user => {
-        user.getAllUsersBlogs(user.id)
-            .then( result => {
-                console.log('Here is a list of your recent blogs.');
-                console.log('------------------------------------');
-                result.forEach(format => {
-                    console.log(format);
-                })
-            }
-        )
-    })
+// Users.getUserById(2)
+//     .then(user => {
+//         user.getAllUsersBlogs(user.id)
+//             .then( result => {
+//                 console.log('Here is a list of your recent blogs.');
+//                 console.log('------------------------------------');
+//                 result.forEach(format => {
+//                     console.log(format);
+//                 })
+//             }
+//         )
+//     })
     
