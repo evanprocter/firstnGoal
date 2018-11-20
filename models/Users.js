@@ -130,7 +130,20 @@ class Users {
 // ==============================
 //          POSTS DATA
 // ==============================
+// Create post
 
+static newBlog(blogTitle, blogBody, blogid) {
+    return db.one(`insert into blogs 
+    (title, body, userid) 
+values ($1, $2, $3) 
+    returning id
+    `, [blogTitle, blogBody, blogid])
+}
+
+
+
+
+// Retrieve
     getAllUsersBlogs(id) {
         return db.any('select * from blogs where userid = $1 order by blogtime desc', [id])
             .then(result => {
