@@ -20,7 +20,7 @@ function footer() {
   return `
   <footer>
      <div class="team-name">
-       <p>&copy 2018 (team name here)</p>
+       <p>&copy 2018 Digital Crafts</p>
      </div>
      <div class="individual-links">
        <div class="april-link links">

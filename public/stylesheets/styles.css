@@ -4,65 +4,103 @@ body {
     font-family: Andale Mono, 'Courier New', Courier, monospace;
 }
 
+header {
+    display: flex;
+}
+
+
 h1 {
-    background: red;
     margin-bottom: 50px;
-    font-family: ;
+    text-align: center;
+    margin: 0 auto;
 }
 
 h3 {
-    background: yellow;
+    font-size: 15px;
+}
+
+footer {
+    display: flex;
+}
+
+.quotes {
+    display: flex;
 }
 
 .quotes p {  
     /* quotes on the home page */
-    background: white;
     margin-bottom: 0px;
+    justify-content: center;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.login-link-div {
+    display: flex;
 }
 
 .login-link-div p {
     /* login and create and account links on home page */
-    background: purple;
+    align-content: space-around;
 }
+
 
 .team-name p {
     /* copyright and company name on home page */
-    background: blue;
+    align-items: center;
+}
+
+.individual-links {
+    display: flex;
 }
 
 .individual-links p {
     /* targets all builders names on footer */
     background: darkgoldenrod;
+    /* flex-direction: column; */
+    align-self: baseline;
+    bottom: 10px;
+    position: fixed;
 }
+
 
 .information-text p {
     /* targets the firstngoal in the header */
-    background: darkgray;
+    align-content: stretch;
 }
 
 .upcoming-match p {
     /* upcoming match on home page */
-    background: lightblue;
+    justify-content: flex-end;
+    width: 30%;
+    display: none;
 }
 
 .sign-up p {
     /* sign up link on home page */
-    background: black;
+    justify-content: center;
 }
 
 .top-posts-from-league p {
     /* top posts in the profile page */
-
+    justify-content: flex-start;
+    flex-direction: column;
+    padding:
 }
 
 .team-info p {
     /* targets 'Your Team' text in the profile page */
-
+    align-content: space-around;
+    align-content: center;
 }
 
 .rankings p {
     /* targets 'standings' text in the profile page */
     background: purple;
+    justify-content: flex-end;
+    flex-grow: 1;
+    align-content: space-between;
+    padding:
 }
 
 
