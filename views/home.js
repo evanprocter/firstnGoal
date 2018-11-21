@@ -6,7 +6,7 @@ function main() {
   </div>
   <div class="mega-home-div">
     <h1>First N' Goal</h1>
-    <h3>"A place where fantasy mind together"</h3>
+    <h3>"A place where fantasy minds come together"</h3>
     <div class="quotes">
       <p><em>"This is the best app ever" - Person 1</em></p>
       <p><em>"This is the worst app ever" - Person 2</em></p>
