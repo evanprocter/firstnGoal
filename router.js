@@ -27,14 +27,14 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// function protectRoute(req, res, next) {
-//   const loggedIn = (req.session.user) ? true : false;
-//   if (loggedIn) {
-//     next();
-//   } else {
-//     res.redirect('/login');
-//   }
-// }
+function protectRoute(req, res, next) {
+  const loggedIn = (req.session.user) ? true : false;
+  if (loggedIn) {
+    next();
+  } else {
+    res.redirect('/login');
+  }
+}
 
 // Home page
 app.get('/', (req, res) => {
@@ -71,10 +71,10 @@ app.post('/login', (req, res) => {
   
 });
 
-// app.post('/logout', (req, res) => {
-//   req.session.destroy();
-//   res.redirect('/');
-// });
+app.post('/logout', (req, res) => {
+  req.session.destroy();
+  res.redirect('/');
+});
 
 // // Setting up registration page
 app.get('/register', (req, res) => {
@@ -102,18 +102,13 @@ app.post('/register', (req, res) => {
   // something here
 });
 
-// Testing
-// app.get('/profile', (req, res) => {
-//   const user = req.params.id;
-//   // something here
-//   res.send(base(profile(user)));
-// });
 
 // // Showing user profile, protected
-app.get('/profile/:id(\\d+)', (req, res) => {
+app.get('/profile/:id(\\d+)', protectRoute, (req, res) => {
   const user = req.params.id;
   // something here
   res.send(base(profile(user)));
+
 });
 
 // // Editing user information, protected
