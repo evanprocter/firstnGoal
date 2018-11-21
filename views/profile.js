@@ -35,6 +35,11 @@ function profile(id) {
     <div class="link-to-personal-post"></div>
     <a href="">Show More</a>
   </div>
+  <div>
+        <form action="/logout" method="POST">
+        <input type="submit" value="logout">
+        </form>
+  </div>
   `
 };
 
