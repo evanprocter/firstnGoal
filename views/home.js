@@ -1,7 +1,7 @@
 function main() {
   return `
   <div class="login-link-div">
-   <p><a href="">Login</a></p>
+   <p><a href="/login">Login</a></p>
     <p><a href="/register">Create an Account</a></p>
   </div>
   <div class="mega-home-div">
@@ -12,8 +12,8 @@ function main() {
       <p><em>"This is the worst app ever" - Person 2</em></p>
     </div>
     <div class="sign-up">
-      <p><a href="">Sign Up Here!</a></p>
-    
+      <p><a href="/register">Sign Up Here!</a></p>
+
   </div>
   `
 }
