@@ -12,8 +12,8 @@ function main() {
       <p><em>"This is the worst app ever" - Person 2</em></p>
     </div>
     <div class="sign-up">
-      <p><a href="">Sign Up Here!</a></p>
-    
+      <p><a href="/register">Sign Up Here!</a></p>
+
   </div>
   `
 }
