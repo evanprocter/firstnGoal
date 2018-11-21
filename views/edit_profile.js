@@ -1,6 +1,5 @@
 function editProfile(id) {
   return `
-<link rel= "stylesheet" href="stylesheets/styles.css">
   <div class="edit-page">
 
     <form action='/edit/${id}' method="POST">
@@ -16,7 +15,7 @@ function editProfile(id) {
         <input type="submit" value="Let's Go!"></p>
       </label>
     </form>
-    <a href="./profile">Go Back</a>
+    <a href="/profile/${id}">Go Back</a>
   </div>
   `
 }

@@ -52,25 +52,22 @@ app.post('/login', (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
   
-    Users.getUserByName(username)
+    Users.getUserByUsername(username)
         .catch(err => {
             console.log(err);
             res.redirect('/login');
         })
-        .then(theUser => {
-          console.log(theUser);
-
-            // if (theUser.passwordDoesMatch(password)) {
-            //     req.session.user = theUser;
-            //     console.log(req.session.user);
-            //     console.log(' I have to poop');
-            //     // res.redirect(`/profile/${req.session.user.id}`);
-            // } else {
-            //     res.redirect('/login');
-            // }
+        .then(user => {
+          console.log(user);
+            if (user.passwordDoesMatch(password)) {
+                req.session.user = user;
+                res.redirect(`/profile/${req.session.user.id}`);
+            } else {
+                res.redirect('/login');
+            }
         })
   
-  res.send(req.body);
+  // res.send(req.body);
   
 });
 
@@ -82,7 +79,7 @@ app.post('/login', (req, res) => {
 // // Setting up registration page
 app.get('/register', (req, res) => {
   // something here
-  res.send(base(register));
+  res.send(base(register()));
 });
 
 // // Creating user from form field
@@ -105,17 +102,18 @@ app.post('/register', (req, res) => {
   // something here
 });
 
-app.get('/profile', (req, res) => {
-  // const user = req.params.id;
-  // something here
-  res.send(base(profile));
-});
+// Testing
+// app.get('/profile', (req, res) => {
+//   const user = req.params.id;
+//   // something here
+//   res.send(base(profile(user)));
+// });
 
 // // Showing user profile, protected
 app.get('/profile/:id(\\d+)', (req, res) => {
   const user = req.params.id;
   // something here
-  res.send(base(profile(3)));
+  res.send(base(profile(user)));
 });
 
 // // Editing user information, protected
@@ -139,8 +137,7 @@ app.post('/edit/:id(\\d+)', (req, res) => {
         })
     })
   
-  // res.redirect()
-  // something here
+  res.redirect(`/profile/${id}`)
 });
 
 // // Going to a specific blog page - (add protected)

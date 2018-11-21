@@ -22,17 +22,21 @@ class Users {
     //===========================
     
     // Adds single user to database
-    static addUser(username, phash, logo) {
+    static addUser(username, password, logo) {
+        
         const salt = bcrypt.genSaltSync(saltRounds);
         const hash = bcrypt.hashSync(password, salt);
+        console.log(hash + "HI HOW THERE YEAH!!!!");
+
+
 
         return db.one(`insert into users 
                             (username, phash, logo) 
                         values ($1, $2, $3) 
                             returning id
-                            `, [username, phash, logo])
+                            `, [username, hash, logo])
                             .then(data => {
-                                const person = new Users(data.id, username, phash, logo);
+                                const person = new Users(data.id, username, hash, logo);
                                 return person;
                             })
                             
@@ -73,8 +77,12 @@ class Users {
     }
     
     // Retrieves a single user
-    static getUserByName(username) {
-        return db.one(`select * from users where username ilike '%$1:raw%'`, [username]);
+    static getUserByUsername(username) {
+        return db.one(`select * from users where username ilike '%$1:raw%'`, [username])
+            .then(result => {
+                const instance = new Users(result.id, result.username, result.phash);
+                return instance;
+            })
     }
 
 
@@ -100,9 +108,14 @@ class Users {
     }
 
     // Retrieves and compares passwords
-    static passwordDoesMatch(password) {
+    passwordDoesMatch(password) {
+        console.log(password);
+        console.log(this.phash);
         const didMatch = bcrypt.compareSync(password, this.phash);
+        console.log(didMatch);
         return didMatch;
+        
+        // return didMatch;
     }
         
     

@@ -1,7 +1,7 @@
 function loginForm() {
   return `
   <div class="login-div">
-    <form action="/login" method="post">
+    <form action="/login" method="POST">
       <label>
         Username:
         <input type="text" name="username">
