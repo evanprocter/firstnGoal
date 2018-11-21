@@ -1,7 +1,7 @@
 function main() {
   return `
   <div class="login-link-div">
-   <p><a href="">Login</a></p>
+   <p><a href="/login">Login</a></p>
     <p><a href="/register">Create an Account</a></p>
   </div>
   <div class="mega-home-div">
