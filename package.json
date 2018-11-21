@@ -6,11 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js",
-    "reset-db": "dropdb firstngoal; createdb firstngoal; psql -f schema.sql firstngoal; psql -f seed.sql firstngoal;"
+    "reset-db": "dropdb firstngoal; createdb firstngoal; psql -f schema.sql firstngoal; psql -f seed.sql firstngoal; psql firstngoal < node_modules/connect-pg-simple/table.sql"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^3.0.2",
     "body-parser": "^1.18.3",
     "connect-pg-simple": "^5.0.0",
     "dotenv": "^6.1.0",

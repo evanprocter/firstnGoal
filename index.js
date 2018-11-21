@@ -34,6 +34,11 @@ require('./router');
 //         console.log(allUsers);
 //     })
 
+// Users.getUserByUsername('stardust')
+//     .then(username => {
+//         console.log(username);
+//     })
+
 // Retrieves user by id
 // Users.getUserById(2)
 //     .then(user => {

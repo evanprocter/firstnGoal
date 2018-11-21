@@ -12,7 +12,7 @@ create table teams (
 create table users (
   id serial primary key,
   username varchar(200) unique not null,
-  phash text unique not null,
+  phash varchar not null,
   logo text,
   teamid integer references teams (id) -- Check if deleting team id will delete the team itself
 );
