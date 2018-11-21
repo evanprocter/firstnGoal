@@ -4,7 +4,7 @@ function showRoster() {
   <p>Roster</p>
   </div>
   <div class="roster-div">
-    <table>
+    <table data-roster>
       <tr>
         <th>Name</th>
         <th>Pos.</th>
